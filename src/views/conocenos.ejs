@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <script>function costo() {
+        let numeroDePersonas,
+          total,
+          categoria,
+          menuDesayuno,
+          menuMerienda,
+          menuBrunch;
+         
+      
+    
+        numeroDePersonas = document.getElementById('inputNumeroDeEntradas').value;
+        categoria = document.getElementById('inputCategoria').value;
+      
+      
+    
+        
+        menuDesayuno = 1800;
+        menuMerienda = 2000;
+        menuBrunch = 2850;
+      
+       
+        if (numeroDePersonas > 0 && !isNaN(numeroDePersonas) && numeroDePersonas % 1 == 0) {
+        
+          if (categoria == 'Desayuno') {
+            total = menuDesayuno + (numeroDePersonas*500);
+            document.getElementById('precioFinal').innerHTML =
+              'Total a Pagar: \u0024' + total;
+          } else if (categoria == 'Merienda') {
+            total = menuMerienda + (numeroDePersonas*700);
+            document.getElementById('precioFinal').innerHTML =
+              'Total a Pagar: \u0024' + total;
+          } else if (categoria == 'Brunch') {
+            total = menuBrunch + (numeroDePersonas*900);
+            document.getElementById('precioFinal').innerHTML =
+              'Total a Pagar: \u0024' + total;
+        
+          } else {
+          window.alert('Debe ingresar la cantidad de entradas en números enteros');
+          }
+        }
+      }</script>
+<%- include('./partials/head')%>
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <section class="conocenos container">
+            <h1>Resolvemos tus eventos</h1>
+            <p>Calidad, puntualidad & precios competitivos</p>
+            <h3> 30 años de experiencia</h3>
+        </section>
+
+
+        <section class="conocenos__info">
+            <article class="conocenos__pasteleros container">
+              <img class="conocenos__pasteleria"src="/img/pasteleros.jpg" alt="">
+             <div class="conocenos__descripcion">
+              <h1>Empatía y trabajo en equipo</h1>
+              <p>El valor principal de nuestra empresa se basa en el respeto, no solo hacia los clientes, sino también con nuestro equipo de trabajo, ya que estamos convencidos que teniendo un buen clima laboral, no solo se trabaja en armonía, sino que también se refleja en el producto final. .</p>
+            </div>
+            </article>
+
+
+            <article class="conocenos__pastelerosdos container">
+              <img class="conocenos__pasteleria" src="/img/pasteleros2.jpg" alt="">
+              <div class="conocenos__descripcion">
+              <h1>Calidad desde el primer contacto</h1>
+              <p> Desde el primer contacto nos caracterizamos por la calidad tanto en la atención como en la calidad del producto terminado.La variación de los platos también es muy importante ya que mes a mes nos vamos innovando dando platos y opciones según la estación del año.</p>
+            </div>
+            </article>
+            <article>
+    
+</article>
+        </section>
+        <section class="container">
+        <form class="conocenos__calcular" action="">
+          <h1>TE INVITAMOS A CONOCERNOS</h1>
+            <h1>Podes calcular el costo de tu menu preferido si sumas personas para compartir el menu base</h1>
+            <div>
+                <label for="inputNumeroDeEntradas" >Cantidad de Personas para agregar:</label>
+                <input type="text" id="inputNumeroDeEntradas" placeholder="cantidad">
+              </div>
+        
+        
+            <div>
+                <label for="inputCategoria" class="form-label">Menu</label>
+                <select id="inputCategoria" class="form-select" >
+                  <option selected>Desayuno</option>
+                  <option>Merienda</option>
+                  <option>Brunch</option>
+                </select>
+              </div>
+        
+              <div>
+                <p id="precioFinal">Total a Pagar: $</p>
+              </div>
+        
+        
+              <div class="col ">
+                <button class="botonEnviar"  type="button" id="btnResumen"  onclick="costo();">Calcular</button>
+              </div>
+            </form>
+        </section>
+        </main>
+        <%- include('./partials/footer')%>
+</body>
+</html>
+</div>

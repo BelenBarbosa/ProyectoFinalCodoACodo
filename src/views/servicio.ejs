@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<%- include('./partials/head1') %>
+<body>
+    <%- include('./partials/header') %>
+    
+    <section class="detalle container">
+            <h1 class="detalle__titulo">En detalle</h1>
+           <article class="e">
+            <h2>Menu N°<%= char.idOferta %> </h2>
+            <h2 class="detalle__nombre"><%= char.nombre %> </h2>
+            </article>
+            <article>
+            <h3>Incluye: <%= char.incluye %> </h3>
+            <h3>El mas pequeño rinde hasta: <%= char.cantidad %> Personas</h3>
+            <h3>Horarios habilitados: <%= char.horarios %> </h3>
+            <h3>Precio $ <%= char.precio %> </h3>
+           </article>
+
+    </section>
+    <%- include('./partials/footer') %>
+</body>

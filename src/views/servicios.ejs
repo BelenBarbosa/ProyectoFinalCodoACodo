@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+
+    <h1 class="servicios__nuestromenu">Nuestro Menú</h1>
+
+    <section class="servicios container">
+ 
+        <% results.forEach( char => { %>
+            
+           <article class="servicios__card">
+            
+    
+            <h2>Menu N°<%= char.idOferta %> </h2>
+            <h2 class="servicios__card--comida"><%= char.nombre %> </h2>
+            <h2><%= char.descripcion %> </h2>
+            <br>
+            <a class="servicios__vermas" href="/api/servicios/<%= char.idOferta %>">Saber Más</a>
+
+        </article>
+
+   <% }); %>
+
+    </section>
+
+    <section class="servicios__imagenes container">
+
+            <article class="">
+                <img class="servicios__imagenes--circular" src="/img/desayuno.jpg" alt="LOGO"> 
+            </article>
+
+            <article class="">
+            <img class="servicios__imagenes--circular" src="/img/merienda.jpg" alt="LOGO"> 
+            </article>
+            
+            <article class="">
+            <img class="servicios__imagenes--circular" src="/img/brunch.jpg" alt="LOGO"> 
+            </article>
+
+           
+           
+      
+           
+    
+    </section>
+    <%- include('./partials/footer') %>
+</body>
